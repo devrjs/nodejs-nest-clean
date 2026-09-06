@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "dist": ["error", { "extensions": [".js", ".mjs", ".mts"] }]
+  }
+}
