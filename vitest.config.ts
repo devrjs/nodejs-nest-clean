@@ -1,5 +1,4 @@
-import { defineConfig } from 'vitest/config';
-import { resolve } from 'node:path';
+import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
@@ -7,9 +6,4 @@ export default defineConfig({
     root: './',
     include: ['**/*.spec.ts'],
   },
-  esbuild: {
-    tsconfigRaw: {
-      tsconfigFile: resolve(__dirname, 'tsconfig.json'),
-    },
-  },
-});
+})
