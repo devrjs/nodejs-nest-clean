@@ -1,22 +1,22 @@
 import { Test, type TestingModule } from '@nestjs/testing'
-import { AppService } from '../../../app.service.js'
-import { AppController } from './app.controller.js'
+import { GetHelloUseCase } from '../../../domain/hello/use-cases/get-hello.js'
+import { GetHelloController } from './app.controller.js'
 
-describe('AppController', () => {
-  let appController: AppController
+describe('GetHelloController', () => {
+  let getHelloController: GetHelloController
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
-      providers: [AppService],
+      controllers: [GetHelloController],
+      providers: [GetHelloUseCase],
     }).compile()
 
-    appController = app.get<AppController>(AppController)
+    getHelloController = app.get<GetHelloController>(GetHelloController)
   })
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!')
+      expect(getHelloController.handle()).toBe('Hello World!')
     })
   })
 })

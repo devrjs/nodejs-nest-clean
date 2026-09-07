@@ -1,13 +1,14 @@
 import { Controller, Get } from '@nestjs/common'
 // biome-ignore lint/style/useImportType: false positive
-import { AppService } from '../../../app.service.js'
+import { GetHelloUseCase } from '../../../domain/hello/use-cases/get-hello.js'
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
+export class GetHelloController {
+  constructor(private readonly getHelloUseCase: GetHelloUseCase) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello()
+  async handle() {
+    const result = await this.getHelloUseCase.execute()
+    return result.value?.message
   }
 }
