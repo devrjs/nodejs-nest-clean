@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { envSchema } from './env/env.js'
+import { EnvModule } from './env/env.module.js'
 import { HttpModule } from './http/http.module.js'
 
 @Module({
@@ -10,6 +11,7 @@ import { HttpModule } from './http/http.module.js'
       isGlobal: true,
     }),
     HttpModule,
+    EnvModule,
   ],
 })
 export class AppModule {}
