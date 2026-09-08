@@ -1,5 +1,4 @@
 import { Controller, Get } from '@nestjs/common'
-// biome-ignore lint/style/useImportType: false positive
 import { GetHelloUseCase } from '../../../domain/hello/use-cases/get-hello.js'
 
 @Controller()

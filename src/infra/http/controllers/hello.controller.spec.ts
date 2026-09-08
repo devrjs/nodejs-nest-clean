@@ -1,6 +1,6 @@
 import { Test, type TestingModule } from '@nestjs/testing'
 import { GetHelloUseCase } from '../../../domain/hello/use-cases/get-hello.js'
-import { GetHelloController } from './app.controller.js'
+import { GetHelloController } from './hello.controller.js'
 
 describe('GetHelloController', () => {
   let getHelloController: GetHelloController

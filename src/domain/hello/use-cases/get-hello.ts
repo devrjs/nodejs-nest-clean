@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { type Either, right } from '../../../core/either.js'
 
-type GetHelloUseCaseRequest = {}
+// type GetHelloUseCaseRequest = {}
 type GetHelloUseCaseResponse = Either<null, { message: string }>
 
 @Injectable()
